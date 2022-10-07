@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPullForce: 5
-  forceMultiplier: 2
+  forceMultiplier: 7
   projectile: {fileID: 3835105095942159975, guid: 47f4eaccb0d09344b9ed491cc9862dc2, type: 3}
 --- !u!4 &1748426023
 Transform:
