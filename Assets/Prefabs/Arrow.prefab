@@ -199,7 +199,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 182451728465755177}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6537566388556698040
 SpriteRenderer:
@@ -262,7 +262,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2459368978324677163}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 70e34aad2d1465448990cf78d2be85ca, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -373,8 +373,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8643605490960056710}
   - {fileID: 6000692213132431175}
+  - {fileID: 8643605490960056710}
   - {fileID: 1767200288601201561}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -393,11 +393,11 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 9.054392
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 6
-  m_Material: {fileID: 6200000, guid: 2bd1be63721e3c44e9535e9c36f0306c, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &2643185701180810228
@@ -780,7 +780,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 182451728465755177}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &5940415900813256315
 SpriteRenderer:
@@ -843,7 +843,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 8673372244559866598}
   m_Enabled: 1
   m_Density: 10
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e289b95c5f12cf74f8c774c18be62d20, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
