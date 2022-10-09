@@ -353,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 182451728465755177}
   - component: {fileID: 4826471327702438015}
-  - component: {fileID: 2643185701180810228}
+  - component: {fileID: -4229934717557681228}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -400,7 +400,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2643185701180810228
+--- !u!114 &-4229934717557681228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
