@@ -464,6 +464,7 @@ MonoBehaviour:
   projectiles:
   - {fileID: 3835105095942159975, guid: 47f4eaccb0d09344b9ed491cc9862dc2, type: 3}
   - {fileID: 448839633708979120, guid: 12190c985154659439c06dfeab7cc1df, type: 3}
+  - {fileID: 7352731924202555341, guid: f60c40abd0a72bf429a5437fa3ac3ffa, type: 3}
 --- !u!4 &1748426023
 Transform:
   m_ObjectHideFlags: 0
