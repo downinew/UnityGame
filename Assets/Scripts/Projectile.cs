@@ -5,13 +5,14 @@ public class Projectile : MonoBehaviour
 {
   private Rigidbody2D projectileRigidBody;
 
-  [SerializeField] private float lifetime;
+  [SerializeField] [Tooltip("The duration in seconds a projectile is active.")]
+  private float lifetime = 30;
 
   private void Awake()
   {
     projectileRigidBody = GetComponent<Rigidbody2D>();
   }
-    
+
   public void Shoot(Vector2 force)
   {
     projectileRigidBody.AddForce(force, ForceMode2D.Impulse);
@@ -21,8 +22,8 @@ public class Projectile : MonoBehaviour
   private void Update()
   {
     transform.up = Vector2.Lerp(transform.up,
-                                      projectileRigidBody.velocity.normalized,
-                                      Time.deltaTime);
+                                projectileRigidBody.velocity.normalized,
+                                Time.deltaTime);
   }
 
   private IEnumerator Deactivate()

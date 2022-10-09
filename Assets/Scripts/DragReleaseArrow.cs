@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DragReleaseArrow : MonoBehaviour
 {
@@ -7,13 +8,17 @@ public class DragReleaseArrow : MonoBehaviour
   private Vector2 startPosition;
   private Vector2 endPosition;
   private GameObject guideLine;
-  
+
+  private int selectedProjectileIndex;
   private bool hasStartPosition;
   private bool hasEndPosition;
   
-  [SerializeField] private float maxPullForce;
-  [SerializeField] private float forceMultiplier;
-  [SerializeField] private GameObject projectile;
+  [SerializeField] [Tooltip("The maximum force that can be applied to a projectile by dragging with the mouse.")]
+  private float maxPullForce;
+  [SerializeField] [Tooltip("The force multiplier which gives projectiles more zaz.")]
+  private float forceMultiplier;
+  [SerializeField] [Tooltip("The projectiles that can be fired.")]
+  private GameObject[] projectiles;
 
   private void Start()
   {
@@ -44,6 +49,12 @@ public class DragReleaseArrow : MonoBehaviour
       hasEndPosition = true;
     }
 
+    if (Input.GetButtonUp("Fire2"))
+    {
+      // change projectile
+      cycleSelectedProjectile();
+    }
+
     if (hasStartPosition)
     {
       Vector2 projectileVector = startPosition - endPosition;
@@ -66,7 +77,8 @@ public class DragReleaseArrow : MonoBehaviour
         if (projectileVector.magnitude > 0)
         {
           // create new projectile
-          GameObject newProjectile = Instantiate(projectile, startPosition,
+          GameObject newProjectile = Instantiate(projectiles[selectedProjectileIndex],
+                                                 startPosition,
                                                  projectileRotation);
           var newProjectileRigidbody = newProjectile.GetComponent<Projectile>();
           if (newProjectileRigidbody != null)
@@ -79,6 +91,18 @@ public class DragReleaseArrow : MonoBehaviour
         hasStartPosition = hasEndPosition = false;
         guideLineRenderer.SetPositions(new []{Vector3.zero, Vector3.zero});
       }
+    }
+  }
+
+  private void cycleSelectedProjectile()
+  {
+    if (selectedProjectileIndex < projectiles.Length - 1)
+    {
+      selectedProjectileIndex++;
+    }
+    else
+    {
+      selectedProjectileIndex = 0;
     }
   }
 }
