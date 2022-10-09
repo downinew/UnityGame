@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using TMPro;
 
 public class DragReleaseArrow : MonoBehaviour
 {
@@ -19,6 +19,8 @@ public class DragReleaseArrow : MonoBehaviour
   private float forceMultiplier;
   [SerializeField] [Tooltip("The projectiles that can be fired.")]
   private GameObject[] projectiles;
+  [SerializeField] [Tooltip("TextMesh to show the selected projectile type.")]
+  private GameObject selectedProjectileText;
 
   private void Start()
   {
@@ -26,6 +28,7 @@ public class DragReleaseArrow : MonoBehaviour
     guideLineRenderer = GetComponent<LineRenderer>();
     startPosition = Vector2.negativeInfinity;
     endPosition = Vector2.negativeInfinity;
+    UpdateSelectedProjectileText();
   }
 
   private void Update()
@@ -104,5 +107,12 @@ public class DragReleaseArrow : MonoBehaviour
     {
       selectedProjectileIndex = 0;
     }
+
+    UpdateSelectedProjectileText();
+  }
+
+  private void UpdateSelectedProjectileText() {
+    var textBox = selectedProjectileText.GetComponent<TextMeshProUGUI>();
+    textBox.text = "Selected projectile: " + projectiles[selectedProjectileIndex].name;
   }
 }
